@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       /* reset */
@@ -24,7 +27,7 @@
       /* reset end */
       body {
         background-color: #e7e7e7;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
       }
       .login-wrap {
         display: flex;
@@ -46,7 +49,7 @@
         margin-bottom: 30px;
         text-align: center;
       }
-      label{
+      label {
         font-size: 14px;
       }
 
@@ -59,9 +62,17 @@
         padding: 8px 4px;
         margin-bottom: 12px;
       }
-      .signLink a{
+      .signLink a {
         font-size: 12px;
         font-weight: bold;
+      }
+      .text {
+        color: red;
+        font-size: 10px;
+        height: 15px;
+      }
+      .signLink {
+        font-size: 13px;
         margin-top: 15px;
         color: lightcoral;
       }
@@ -76,7 +87,7 @@
         margin-top: 20px;
         cursor: pointer;
       }
-      .text{
+      .text {
         height: 20px;
         font-size: 11px;
       }
@@ -126,7 +137,6 @@
         </form>
       </div>
     </div>
-
     <script>
       const inputId = document.querySelector(".userid");
       const inputPasswd = document.querySelector(".passwd");
@@ -141,8 +151,6 @@
 
       // Input(사용자입력칸)에 입력되었는지 체크하는 함수
       const checkInput = (inputId, inputPasswd) => {
-
-
         if (inputId.value == "") {
           printAlert("아이디");
           inputId.focus();
@@ -163,24 +171,22 @@
 
       const noticeNoMember = () => {
         DomText.innerHTML = `<b>아이디 또는 비밀번호를 확인하세요.</b>`;
+        DomText.innerHTML = `<b>존재하지 않는 회원입니다.</b>`;
       };
 
       const handleLogin = (event) => {
         event.preventDefault();
 
-
         if (!checkInput(inputId, inputPasswd)) return;
-
 
         if (userid.value == "id123" && passwd.value == "passwd123") {
           login();
         } else {
           noticeNoMember();
         }
-      }
+      };
 
-        document.querySelector(".btn").addEventListener("click", handleLogin);
-
+      document.querySelector(".btn").addEventListener("click", handleLogin);
 
       /*
       
@@ -191,18 +197,24 @@
       const login = () => {
       const login = (event) => {
         event.preventDefault();
+
+      const DomText = document.querySelector(".text");
+
+      const login = (event) => {
+        event.preventDefault();
+
+
         console.log(userid.value, passwd.value);
         
         if (userid.value == "id123" && passwd.value == "passwd123") {
           alert("login");
           location.href = "https://www.naver.com";
+
         } else if (userid.value == "") {
           DomText.innerHTML = "<b>아이디를 입력하세요.</b>";
-          userid.value = "";
           userid.focus();
         } else if (passwd.value == "") {
           DomText.innerHTML = "<b>패스워드를 입력하세요.</b>";
-          passwd.value = "";
           passwd.focus();
         } else {
           DomText.innerHTML = "<b>아이디 또는 패스워드를 확인하세요.</b>";
@@ -211,9 +223,9 @@
         }
       };
       document.querySelector("btn").addEventListener("click", login);
+
       document.querySelector(".btn").addEventListener("click", login);
       */
     </script>
   </body>
 </html>
-</html> 
