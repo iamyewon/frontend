@@ -22,31 +22,29 @@ footer {
 /* .logo-icon img {
   width: 300px;
 } */
-.header-logo span {
-  font-size: 3rem;
-  align-items: center;
-}
-.header-my {
-  display: flex;
-  flex-direction: column;
+.header-logo img {
+  width: 350px;
 }
 .my-function {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
-.my-function div {
+.my-function li {
   margin: 10px 10px 0px 0px;
+  font-size: 12px;
 }
 .search {
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .search input {
   border: 1px solid transparent;
   border-bottom: 1px solid black;
   width: 150px;
+}
+.search input:focus{
+  outline:none;
 }
 
 .menu-wrap {
@@ -54,7 +52,10 @@ footer {
   justify-content: center;
 }
 .menu-wrap a {
-  margin: 0 30px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 40px;
+  box-shadow: inset 0px -0.4em 0 0 rgba(204,208,240, 1);
 }
 .main-img {
   background-image: url(../img/mainimg.jpg);
@@ -63,21 +64,42 @@ footer {
   background-size: cover;
   height: 600px;
 }
-.best-title {
+.best-title,
+.new-title {
   padding: 20px;
+  margin: 30px 0 15px 0;
   text-align: center;
+  font-size: 18px;
 }
-.bestproduct {
+.bestproduct,
+.newproduct {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 }
-.bestproduct img {
+.product-wrap{
+  margin: 0 5px;
+}
+.bestproduct img,
+.newproduct img {
   width: 300px;
   height: 250px;
 }
+.product-name{
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  padding: 7px 0px;
+  
+}
+.product-price{
+  text-align: right;
+  padding: 0 5px 10px 0;
+  /* border-bottom: 0.5px solid #ddd; */
+}
 .bestproduct .fa-angle-left,
-.bestproduct .fa-angle-right {
+.bestproduct .fa-angle-right,
+.newproduct .fa-angle-left,
+.newproduct .fa-angle-right {
   font-size: 30px;
   color: rgba(100, 100, 100, 0.7);
   line-height: 250px;
@@ -85,16 +107,26 @@ footer {
   margin: 0 10px;
 }
 .product-function {
-  display: flex;
-  flex: row;
-  justify-content: space-between;
+  width: 100%;
   height: 35px;
   padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.want-review{
+  line-height: 35px;
+  text-align: center;
+}
+.want{
+  margin-right: 7px;
 }
 .product-function .fa-basket-shopping {
   font-size: 20px;
   line-height: 35px;
-  text-align: center;
   color: rgb(75, 75, 75);
-  padding: 0 5px;
+  padding:5px;
+  margin-right: 10px;
+}
+hr{
+  margin: 40px 0 20px 0;
 }

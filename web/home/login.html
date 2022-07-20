@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Login Box</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kristi&family=Lato&family=Lora:ital@1&display=swap"
       rel="stylesheet"
     />
-
     <style>
       /* reset */
       * {
@@ -27,7 +26,6 @@
       /* reset end */
       body {
         background-color: #e7e7e7;
-        font-family: "Poppins", sans-serif;
       }
       .login-wrap {
         display: flex;
@@ -42,17 +40,17 @@
         padding: 40px 50px;
         border: 1px solid rgba(34, 36, 38, 0.2);
         border-radius: 7px;
-        width: 350px;
-        height: 400px;
+        width: 300px;
+        height: 350px;
       }
       .login-box h1 {
         margin-bottom: 30px;
         text-align: center;
       }
-      label {
-        font-size: 14px;
+      .userid,
+      passwd {
+        margin-bottom: 5px;
       }
-
       input {
         border: 0;
         outline: 0;
@@ -60,28 +58,24 @@
         border-radius: 3px;
         width: 100%;
         padding: 8px 4px;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
-      .signLink a {
-        font-size: 12px;
-        font-weight: bold;
-      }
-      .text {
+      .text{
         color: red;
         font-size: 10px;
         height: 15px;
+        
       }
       .signLink {
         font-size: 13px;
         margin-top: 15px;
-        color: lightcoral;
       }
       .btn {
         border: 0;
-        background-color: rgb(100, 150, 219);
+        background-color: lightsteelblue;
         color: white;
-        padding: 10px 17px;
-        font-size: 13px;
+        padding: 6px 12px;
+        font-size: 15px;
         border-radius: 3px;
         float: right;
         margin-top: 20px;
@@ -92,7 +86,7 @@
         font-size: 11px;
       }
       ::placeholder {
-        color: rgba(100, 150, 219, 0.7);
+        color: steelblue;
       }
     </style>
   </head>
@@ -101,7 +95,7 @@
       <div class="login-box">
         <h1>Login</h1>
         <form
-          method="post"
+          method="post"\
           action="../admin/index.html"
           enctype="multipart/form-data"
         >
@@ -151,6 +145,8 @@
 
       // Input(사용자입력칸)에 입력되었는지 체크하는 함수
       const checkInput = (inputId, inputPasswd) => {
+
+
         if (inputId.value == "") {
           printAlert("아이디");
           inputId.focus();
@@ -170,39 +166,34 @@
       };
 
       const noticeNoMember = () => {
-        DomText.innerHTML = `<b>아이디 또는 비밀번호를 확인하세요.</b>`;
         DomText.innerHTML = `<b>존재하지 않는 회원입니다.</b>`;
       };
 
       const handleLogin = (event) => {
         event.preventDefault();
 
+
         if (!checkInput(inputId, inputPasswd)) return;
+
 
         if (userid.value == "id123" && passwd.value == "passwd123") {
           login();
         } else {
           noticeNoMember();
         }
-      };
+      }
 
-      document.querySelector(".btn").addEventListener("click", handleLogin);
+        document.querySelector(".btn").addEventListener("click", handleLogin);
+
 
       /*
       
       const userid = document.querySelector(".userid");
       const passwd = document.querySelector(".passwd");
-      const DomText = document.querySelector("text");
-      const DomText = document.querySelector(".text");
-      const login = () => {
-      const login = (event) => {
-        event.preventDefault();
-
       const DomText = document.querySelector(".text");
 
       const login = (event) => {
         event.preventDefault();
-
 
         console.log(userid.value, passwd.value);
         
@@ -218,12 +209,11 @@
           passwd.focus();
         } else {
           DomText.innerHTML = "<b>아이디 또는 패스워드를 확인하세요.</b>";
-@@ -146,7 +210,8 @@ <h1>Login</h1>
+          userid.value = "";
+          passwd.value = "";
           userid.focus();
         }
       };
-      document.querySelector("btn").addEventListener("click", login);
-
       document.querySelector(".btn").addEventListener("click", login);
       */
     </script>
